@@ -1,4 +1,4 @@
-console.log("loaded app.js from GitHub");
+console.log("loaded app.js from GitHub ");
 
 var fragment = `
 uniform float time;
