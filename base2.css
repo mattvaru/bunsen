@@ -1,0 +1,264 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box !important;
+}
+
+:root {
+  font-size: 18px !important;
+}
+
+body {
+  margin: 0;
+  --color-text: #fff!important;
+  --color-bg: #000 !important;
+  --color-link: #c63643 !important;
+  --color-link-hover: #fff !important;
+  color: var(--color-text) !important;
+  background-color: var(--color-bg) !important;
+  font-family: mono45-headline, monospace !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.demo-2 {
+  --color-link: #b95e5d !important;
+}
+
+.demo-3 {
+  --color-link: #f7bcac !important;
+}
+
+.demo-4 {
+  --color-link: #bf8b5b !important;
+}
+
+.lil-gui {
+  visibility: hidden !important;
+}
+
+.demo-4 .lil-gui {
+  visibility: visible !important;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+  content: "" !important;
+  position: fixed !important;
+  z-index: 1000 !important;
+}
+
+.js .loading::before {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: var(--color-bg) !important;
+}
+
+.js .loading::after {
+  top: 50% !important;
+  left: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  margin: -30px 0 0 -30px !important;
+  border-radius: 50% !important;
+  opacity: 0.4 !important;
+  background: var(--color-link) !important;
+  animation: loaderAnim 0.7s linear infinite alternate forwards !important;
+}
+
+@keyframes loaderAnim {
+  to {
+    opacity: 1 !important;
+    transform: scale3d(0.5, 0.5, 1) !important;
+  }
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--color-link) !important;
+  outline: none !important;
+}
+
+a:hover {
+  color: var(--color-link-hover) !important;
+  outline: none !important;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+  /* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+  outline: none !important;
+  background: lightgrey !important;
+}
+
+a:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+  background: transparent !important;
+}
+
+a:focus-visible {
+  /* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+  outline: 2px solid red !important;
+  background: transparent !important;
+}
+
+.unbutton {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font: inherit !important;
+}
+
+.unbutton:focus {
+  outline: none !important;
+}
+
+.frame {
+  padding: 3rem 5vw;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.frame__title {
+  font-size: 1rem !important;
+  margin: 0 0 1rem !important;
+  font-weight: normal !important;
+}
+
+.frame__links {
+  display: inline !important;
+}
+
+.frame__links a:not(:last-child),
+.frame__demos a:not(:last-child) {
+  margin-right: 1rem !important;
+}
+
+.frame__demos {
+  margin: 1rem 0 !important;
+}
+
+.frame__demo--current,
+.frame__demo--current:hover {
+  color: var(--color-text) !important;
+}
+
+.content {
+  display: grid !important;
+  width: 100vw !important;
+  height: calc(100vh - 13rem) !important;
+  position: relative !important;
+  padding: 3rem !important;
+}
+
+.content__title {
+  font-family: mono45-headline, monospace !important;
+  font-size: 13vw !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  max-width: 50vw !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  align-self: center !important;
+  pointer-events: none !important;
+}
+
+.content__title--centered {
+  text-align: center !important;
+  justify-self: center !important;
+}
+
+.content__title--style-1 {
+  font-family: new-order, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 10vw !important;
+  line-height: 0.85 !important;
+  background: linear-gradient(90deg, #e9a680 0%, #992d46 50%, #064cb5 100%) !important;
+  background-size: cover !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-fill-color: transparent !important;
+}
+
+.content__title--style-2 {
+  font-family: bely-display, serif !important;
+  font-weight: 400 !important;
+  font-size: 10vw !important;
+  opacity: 0.7 !important;
+  line-height: 0.8 !important;
+}
+
+@media screen and (min-width: 53em) {
+  .frame {
+    position: fixed !important;
+    text-align: left !important;
+    z-index: 100 !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: grid !important;
+    align-content: space-between !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100vh !important;
+    padding: 1.5rem 3.35rem !important;
+    pointer-events: none !important;
+    grid-template-columns: auto 1fr !important;
+    grid-template-rows: auto auto auto !important;
+    grid-template-areas:
+      "title ..."
+      "... ..."
+      "links demos" !important;
+  }
+  .frame__title-wrap {
+    grid-area: title !important;
+    display: flex !important;
+  }
+  .frame__title {
+    margin: 0 !important;
+  }
+  .frame__tagline {
+    position: relative !important;
+    margin: 0 0 0 0.25rem !important;
+    padding: 0 0 0 1rem !important;
+    opacity: 0.5 !important;
+  }
+  .frame__demos {
+    margin: 0 !important;
+    grid-area: demos !important;
+    justify-self: end !important;
+  }
+  .frame__links {
+    grid-area: links !important;
+    padding: 0 !important;
+    justify-self: start !important;
+  }
+  .frame a {
+    pointer-events: auto !important;
+  }
+  .content {
+    height: 100vh !important;
+  }
+}
+#canvasContainer {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: -1 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+#canvasContainer img {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+}
